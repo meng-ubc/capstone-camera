@@ -35,46 +35,46 @@ module Graphics_Controller (
 	// Timings - USE THESE (BCDE/PQRS)for 800x480 @50HZ with 25Mhz clock
 	//////////////////////////////////////////////////////////////////////////////////////
 	
-	// H_RES: := 800;
-	// V_RES: := 480;
+	parameter H_RES = 800;
+	parameter V_RES = 480;
 	
 	// Horizontal timings	
-	//  B  72;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
-	//  C  90;			// back porch has to return high for 1.79us before video = 45*0.04us = 1.8us
-	//  D  H_RES;		// 800 pixel columns per row; count starts from 0
-	//  E  24;			// front porch = 0.79uS or 
+	parameter B = 72;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
+	parameter C = 90;			// back porch has to return high for 1.79us before video = 45*0.04us = 1.8us
+	parameter D = H_RES;		// 800 pixel columns per row; count starts from 0
+	parameter E = 24;			// front porch = 0.79uS or 
 	
 	// total horizontal period =  992 clock periods at 25Mhz = 38.4uS
 
-	//  P   7;			// vertical sync pulse
-	//  Q   12;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
-	//  R   V_RES	;		// 480 pixel rows per screen; count starts from 0
-	//  S   5;				// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12	
+	parameter P = 7;			// vertical sync pulse
+	parameter Q = 12;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
+	parameter R = V_RES	;		// 480 pixel rows per screen; count starts from 0
+	parameter S = 5;				// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12	
 	
 	
 	////////////////////////////////////////////////////////////////////////-
 	// Timings - USE THESE (BCDE/PQRS)for 800x480 @60HZ with 30Mhz clock
 	////////////////////////////////////////////////////////////////////////-
 	
-	 parameter H_RES = 800;
-	 parameter V_RES = 480;
+	// parameter H_RES = 800;
+	// parameter V_RES = 480;
 	
 	// Horizontal timings	
 	// increase back porch count to move image "right" and reduce to move image "left"
 
-	 parameter B =  72;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
-	 parameter C =  96;			// back porch has to return high for 1.79us before video = 45*0.04us = 1.8us
-	 parameter D =  H_RES;		// 800 pixel columns per row; count starts from 0
-	 parameter E =  24;			// front porch = 0.79uS or 
+	// parameter B =  72;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
+	// parameter C =  96;			// back porch has to return high for 1.79us before video = 45*0.04us = 1.8us
+	// parameter D =  H_RES;		// 800 pixel columns per row; count starts from 0
+	// parameter E =  24;			// front porch = 0.79uS or 
 	
 	// Vertical timings 
 	// increase back porch count to move image "down" screen and reduce to move "up" screen
 
 
-	 parameter P =   7;			// vertical sync pulse
-	 parameter Q =   12;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
-	 parameter R = V_RES;		// 480 pixel rows per screen; count starts from 0
-	 parameter S =  3;				// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12	
+	// parameter P =   7;			// vertical sync pulse
+	// parameter Q =   12;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
+	// parameter R = V_RES;		// 480 pixel rows per screen; count starts from 0
+	// parameter S =  3;				// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12	
 	
 	
 	// Universal Timings - Use these regardless of resolution / refresh rate
