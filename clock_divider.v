@@ -1,9 +1,9 @@
 //in_clk is assumed as 50MHz, the reset is active high 
 module clock_divider(   input in_clk, reset,
-                        output logic outclk);
+                        output outclk);
     parameter divider_count = 2;//outclk is 25MHz by default
 
-    logic [9:0] counter;
+    reg [9:0] counter;
 
     always @(posedge in_clk) begin
         if (reset) begin

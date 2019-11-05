@@ -16,40 +16,40 @@ module Graphics_Controller (
 	// Timings - USE THESE (BCDE/PQRS) for 640x480 @60HZ with 25Mhz clock
 	//////////////////////////////////////////////////////////////////////////////////////
 	
-	// H_RES 640;
-	// V_RES 480;
+	parameter H_RES = 640;
+	parameter V_RES = 480;
 
 	// Horizontal timings
-	// B 95;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
-	// C 45;			// sync has to return high for 1.79us before video = 45*0.04us = 1.8us
-	// D H_RES;		// 800 pixel columns per row; count starts from 0
-	// E 20;			// front porch = 0.79uS or 
+	parameter B = 95;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
+	parameter C = 45;			// sync has to return high for 1.79us before video = 45*0.04us = 1.8us
+	parameter D = H_RES;		// 800 pixel columns per row; count starts from 0
+	parameter E = 20;			// front porch = 0.79uS or 
 	
 	// Vertical timings
-	//P  2;			// vertical sync pulse = at least 64uS so at least 2 horizontal periods = 76.8us
-	//Q 27;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
-	//R V_RES	;		// 480 pixel rows per screen; count starts from 0
-	//S 12;			// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12
+	parameter P = 2;			// vertical sync pulse = at least 64uS so at least 2 horizontal periods = 76.8us
+	parameter Q = 27;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
+	parameter R = V_RES	;		// 480 pixel rows per screen; count starts from 0
+	parameter S = 12;			// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12
 	
 	//////////////////////////////////////////////////////////////////////////////////////
 	// Timings - USE THESE (BCDE/PQRS)for 800x480 @50HZ with 25Mhz clock
 	//////////////////////////////////////////////////////////////////////////////////////
 	
-	parameter H_RES = 800;
-	parameter V_RES = 480;
+	//parameter H_RES = 800;
+	//parameter V_RES = 480;
 	
 	// Horizontal timings	
-	parameter B = 72;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
-	parameter C = 90;			// back porch has to return high for 1.79us before video = 45*0.04us = 1.8us
-	parameter D = H_RES;		// 800 pixel columns per row; count starts from 0
-	parameter E = 24;			// front porch = 0.79uS or 
+	//parameter B = 72;			// sync pulse has to be 3.77us approx or 95*0.04us = 3.8us
+	//parameter C = 90;			// back porch has to return high for 1.79us before video = 45*0.04us = 1.8us
+	//parameter D = H_RES;		// 800 pixel columns per row; count starts from 0
+	//parameter E = 24;			// front porch = 0.79uS or 
 	
 	// total horizontal period =  992 clock periods at 25Mhz = 38.4uS
 
-	parameter P = 7;			// vertical sync pulse
-	parameter Q = 12;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
-	parameter R = V_RES	;		// 480 pixel rows per screen; count starts from 0
-	parameter S = 5;				// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12	
+	//parameter P = 7;			// vertical sync pulse
+	//parameter Q = 12;			// back porch = 102uS (min) so 27 lines of 38.4 uS = at least 26.56 so round up to 27
+	//parameter R = V_RES	;		// 480 pixel rows per screen; count starts from 0
+	//parameter S = 5;				// front porch = 450uS (min) so this is at lest 11.8 line periods of 38.4 uS rounded up to 12	
 	
 	
 	////////////////////////////////////////////////////////////////////////-
