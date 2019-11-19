@@ -4,5 +4,7 @@ Used to gather footage from camera and display it onto a screen through VGA port
 
 ## Main components
 The main parts of this project is a camera interface and a graphics controller.
-## Graphics Controller
+### Graphics Controller
 The graphics controller was adapted from CPEN391 course materials from UBC.
+### Python scripts
+The python_script folder contains python scripts for streaming video on raspberry pi to a webpage on another device which connects to the same router.
